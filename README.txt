@@ -1,6 +1,6 @@
 	General description:
 
-    The application consists in the implementation of a client type application
+    The application consists of the implementation of a client type application
 interacts with a server. Communication between the two is done through routes
 HTTP. The server can receive different commands, and the purpose of the client is
 to take these commands from the user, to put the data entered
