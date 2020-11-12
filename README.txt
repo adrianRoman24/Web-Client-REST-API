@@ -1,22 +1,21 @@
 	General description:
 
-    The application consists of the implementation of a client type application
-interacts with a server. Communication between the two is done through routes
-HTTP. The server can receive different commands, and the purpose of the client is
-to take these commands from the user, to put the data entered
+    The application consists of the implementation of a client type - server application.
+    Communication between the two is done through HTTP routes. The server can receive different
+commands and the purpose of the client is to take these commands from the user, to put the entered data
 in a server-recognized format and send them to the server.
 
-    Flow program
+    Program flow
 
     Allocate memory for buffer, cookie, token, and a
-Json object. Then, you enter an "infinite" while in which commands are read
-from stdin in buffer. From this while you only exit when reading the exit command.
+Json object. Then, the programs enters a loop in which commands are read
+from stdin in buffer. From this loop, the program exits when reading the exit command.
 An error message is displayed when an invalid command is read, and the program
-continue operation. When you enter a valid command, it reopens
+continues with the next operation. When you enter a valid command, it reopens
 connection to the server (because I noticed that this is a way to
 ensures that we are connected to the server when we give an order), the function is called
 corresponding to that command and then closes the connection to the server.
-When it exits the loop, the used memory is dislocated.
+When it exits the loop, the used memory is de-allocated.
 
     Description of an order
 
@@ -44,11 +43,11 @@ get_book, add_book or get_books.
 
     Parson json and display response from the server
     
-    I used the parson library to build the required json objects as well
+    I used the parson library to build the required json objects as well as
 to send them to the server in a "pretty" format. To find and to
 process a token or a cookie received from the server I searched manually in the answer
-received after the keywords mentioned above. After entering an order,
+received message after the keywords mentioned above. After entering an order,
 the response from the server is displayed unchanged because it contains matching messages
 both for success and for error situations. For get_book and get_books commands,
-in case of success, the json objects required in the statement are also displayed, parsed also by using
-parson library.
+in case of success, the json objects required in the statement are also displayed, also parsed
+by using parson library.
